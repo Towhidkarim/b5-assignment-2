@@ -83,7 +83,7 @@ UPDATE species SET conservation_status = 'Historic'
 -- Problem 8 --
 SELECT sightings.sighting_id,
  CASE
-  WHEN extract(HOUR from sightings.sighting_time) <= 12 THEN 'Morning'
+  WHEN extract(HOUR from sightings.sighting_time) < 12 THEN 'Morning'
   WHEN extract(HOUR from sightings.sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
   ELSE 'Evening'
  END
